@@ -10,9 +10,9 @@ const workerUrl = 'https://edis.esandcloud.com/efaceid/1.10.0/worker.min.1.10.0.
 
 function App() {
   const esandVerifyConfig = {
-    bizId: encodeURIComponent('2024052018151GF15'),
+    bizId: encodeURIComponent('2024052318151GF15'),
     livingType: encodeURIComponent('1'),
-    returnUrl: encodeURI(window.location.href)
+    returnUrl: `get:${encodeURI(window.location.href)}`
   }
   const esandVerifyLink = `https://edis.esandcloud.com/livingdetection/rpverifyh5/public/livingdetect/getLDTURL?strategy=1&bizId=${esandVerifyConfig.bizId}&livingType=${esandVerifyConfig.livingType}&returnUrl=${esandVerifyConfig.returnUrl}`
 
