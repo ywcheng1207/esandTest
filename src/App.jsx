@@ -12,7 +12,7 @@ function App() {
   const esandVerifyConfig = {
     bizId: '2024052318151GF15',
     livingType: '1',
-    returnUrl: encodeURI(window.location.href)
+    returnUrl: `get:${encodeURI(window.location.href)}`
   }
   const esandVerifyLink = `https://edis.esandcloud.com/livingdetection/rpverifyh5/public/livingdetect/getLDTURL?strategy=1&bizId=${esandVerifyConfig.bizId}&livingType=${esandVerifyConfig.livingType}&returnUrl=${esandVerifyConfig.returnUrl}`
 
@@ -35,9 +35,10 @@ function App() {
   }
 
   return (
-    <div>
-      <button onClick={handleSubmit1}>sdk方案</button>
-      <button onClick={() => window.location.assign(esandVerifyLink)}>跳轉方案</button>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <button onClick={handleSubmit1}>sdk方案：這個方案點了會初始化(看console)。但RN沒地方引入cdn</button>
+      <button onClick={() => window.location.assign(esandVerifyLink)}>跳轉方案：這個方案用手機，可以過去掃臉，成功掃連完之後要回到指定的連結會失敗(空白一片)</button>
+      <div>以上，目前廠商也無解。</div>
     </div>
   );
 }
