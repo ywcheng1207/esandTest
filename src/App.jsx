@@ -35,10 +35,10 @@ function App() {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <button onClick={handleSubmit1}>sdk方案：這個方案點了會初始化(看console)。但RN沒地方引入cdn</button>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+      <button onClick={handleSubmit1}>sdk方案：這個方案點了會初始化(見console)，如果這個方案可行，初始化取得的data就會是我們後端api(/init)的initMsg。<span style={{ color: 'tomato' }}>但RN沒地方引入cdn</span></button>
       <button onClick={() => window.location.assign(esandVerifyLink)}>跳轉方案：這個方案用手機，可以過去掃臉，成功掃連完之後要回到指定的連結會失敗(空白一片)</button>
-      <div>以上，目前廠商也無解。</div>
+      <div>以上，目前廠商也無解</div>
     </div>
   );
 }
