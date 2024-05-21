@@ -12,7 +12,7 @@ function App() {
   const esandVerifyConfig = {
     bizId: encodeURIComponent('2024052318151GF15'),
     livingType: encodeURIComponent('1'),
-    returnUrl: `get:${encodeURI(window.location.href)}`
+    returnUrl: `get:${window.location.href}`
   }
   const esandVerifyLink = `https://edis.esandcloud.com/livingdetection/rpverifyh5/public/livingdetect/getLDTURL?strategy=1&bizId=${esandVerifyConfig.bizId}&livingType=${esandVerifyConfig.livingType}&returnUrl=${esandVerifyConfig.returnUrl}`
 
