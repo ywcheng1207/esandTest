@@ -1,0 +1,213 @@
+#es_living_detection_main_container {
+  width: 280px;
+  height: 325px;
+  position: relative;
+  padding: 10px;
+  display: inline-block;
+}
+
+.es_living_detection_hide[state='hide'] {
+  display: none;
+}
+
+#es_living_detection_camera_container {
+  height: 0px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 10;
+  width: 250px;
+  height: 0px;
+  left: 25px;
+  top: 45px;
+  border-radius: 250px;
+  overflow: hidden;
+}
+
+#es_living_detection_camera_container>video {
+  position: absolute;
+}
+
+.es_living_detection_inner_container {
+  position: absolute;
+  left: calc(50% - 120px);
+  top: 50px;
+}
+
+.es_living_detection_inner_container:nth-last-child(1) {
+  left: calc(50% - 125px);
+  top: 45px;
+}
+
+#es_living_detection_video_show {
+  transform: scaleX(-1);
+}
+
+#es_living_detection_video_show[state="nscalex"] {
+  transform: scaleX(1);
+}
+
+#es_living_detection_canvasOutPut_container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 280px;
+  height: 325px;
+  padding: 10px;
+}
+
+#title_canvas {
+  position: absolute;
+  left: 0px;
+  top: 20px;
+  z-index: 10001;
+}
+
+#title_canvas[state="hide"] {
+  display: none;
+}
+
+#title_canvas[state="show"] {
+  display: block;
+}
+
+.es_living_detection_prompt_title {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  transition: all 1s;
+  font-weight: bolder;
+}
+
+.es_living_detection_process_bar {
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 25px;
+  font-weight: bolder;
+  font-size: 12px;
+  position: absolute;
+  top: 250px;
+  width: 250px;
+}
+
+.es_living_detection_process_bar[state="show"] {
+  display: flex;
+}
+
+.es_living_detection_process_bar[state="hide"] {
+  display: none;
+}
+
+
+.es_living_detection_process_bar>.es_living_detection_process_bar_arrow {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.es_living_detection_process_bar>.es_living_detection_process_bar_cell {
+  width: 100%;
+  margin: 0px 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.es_living_detection_process_bar>.es_living_detection_process_bar_cell>.es_living_detection_process_bar_cell_circle {
+  color: white;
+  font-weight: normal;
+  height: 15px;
+  width: 15px;
+  border-radius: 15px;
+  display: flex;
+  background-color: #a0a0a0;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  font-size: 8px;
+}
+
+.es_living_detection_process_bar>.es_living_detection_process_bar_cell[complete]>.es_living_detection_process_bar_cell_circle {
+  background-color: #4285f4;
+}
+
+.es_living_detection_process_bar>.es_living_detection_process_bar_cell>.es_living_detection_process_bar_cell_circle:nth-child(1) {
+  display: inherit;
+}
+
+.es_living_detection_process_bar>.es_living_detection_process_bar_cell>.es_living_detection_process_bar_cell_circle:nth-child(2) {
+  display: none;
+}
+
+.es_living_detection_process_bar>.es_living_detection_process_bar_cell[complete]>span:nth-child(1) {
+  display: none;
+}
+
+.es_living_detection_process_bar>.es_living_detection_process_bar_cell[complete]>span:nth-child(2) {
+  display: inherit;
+}
+
+.es_living_detection_process_bar>.es_living_detection_process_bar_cell[execute]>span:nth-child(1) {
+  background-color: red;
+}
+
+.es_living_detection_process_bar>.es_living_detection_process_bar_cell[execute]>span:last-child {
+  color: red;
+}
+
+.es_living_detection_process_bar>.es_living_detection_process_bar_cell:nth-child(1) {
+  margin-left: 0px;
+}
+
+.es_living_detection_process_bar>.es_living_detection_process_bar_cell:nth-last-child(1) {
+  margin-right: 0px;
+}
+
+#face_image_mask {
+  z-index: 10000;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#face_image_mask[state="hide"] {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#face_image_mask[state="show"] {
+  opacity: 0.9;
+  transition: opacity 1s;
+}
+
+#face_image_mask[state="rotate_ani"] {
+  opacity: 1;
+  -webkit-animation: spin 1s linear 1s 5 alternate;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
