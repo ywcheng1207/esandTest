@@ -37,7 +37,7 @@ function App() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
       <button onClick={handleSubmit1}>sdk方案：這個方案點了會初始化(見console)，如果這個方案可行，初始化取得的data就會是我們後端api(/init)的initMsg。<span style={{ color: 'tomato' }}>(不過RN沒地方引入cdn)</span></button>
-      <button onClick={() => window.location.assign(esandVerifyLink)}>跳轉方案：這個方案要用手機，可以過去掃臉，成功掃臉完之後要回到指定的連結會失敗<span style={{ color: 'tomato' }}>(空白一片)</span></button>
+      <button onClick={() => window.location.assign(esandVerifyLink)}>跳轉方案：這個方案要用手機，可以過去掃臉，成功掃臉完之後要回到指定的連結會失敗<span style={{ color: 'tomato' }}>(會顯示'發生錯誤，無法開啟應用程式')</span></button>
     </div>
   );
 }
