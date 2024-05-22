@@ -16,7 +16,7 @@ function App() {
     // returnUrl: 'https://www.baidu.com/'
     // returnUrl: 'https://www.google.com/'
     // returnUrl: `get:https://www.google.com/`
-    returnUrl: 'https://www.youtube.com/'
+    returnUrl: 'https://gplayerweb.fafauat.one/'
   }
   const esandVerifyLink = `https://edis.esandcloud.com/livingdetection/rpverifyh5/public/livingdetect/getLDTURL?strategy=1&bizId=${esandVerifyConfig.bizId}&livingType=${esandVerifyConfig.livingType}&returnUrl=${esandVerifyConfig.returnUrl}`
 
