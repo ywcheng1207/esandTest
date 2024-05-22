@@ -12,18 +12,18 @@ function App() {
   const esandVerifyConfig = {
     bizId: '2024052318151GF15',
     livingType: '1',
-    // returnUrl: `get:${encodeURI(window.location.href)}`
+    returnUrl: `get:${encodeURI(window.location.href)}`
     // returnUrl: 'https://www.baidu.com/'
     // returnUrl: 'https://www.google.com/'
     // returnUrl: `get:https://www.google.com/`
-    returnUrl: 'https://www.goubao08.com/'
+    // returnUrl: 'https://www.goubao08.com/'
   }
   const esandVerifyLink = `https://edis.esandcloud.com/livingdetection/rpverifyh5/public/livingdetect/getLDTURL?strategy=1&bizId=${esandVerifyConfig.bizId}&livingType=${esandVerifyConfig.livingType}&returnUrl=${esandVerifyConfig.returnUrl}`
 
   const handleSubmit1 = () => {
     EsLivingDetection.verifyInit(workerUrl, "1", config).then(result => {
       //把初始化信息给业务服务器，获取认证token
-      console.log('', result)
+      console.log('活體檢測初始化訊息', result)
       return sendToServer(initMsg);
     }).then(res => {
       //传入token以及挂载活体检测element的容器id 执行活体检测
